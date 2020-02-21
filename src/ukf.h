@@ -41,6 +41,10 @@ class UKF {
    */
   void UpdateRadar(MeasurementPackage meas_package);
 
+  /**
+   * Print the NIS value for tunning the parameters
+   */
+  void printNIS();
 
   // initially set to false, set to true in first call of ProcessMeasurement
   bool is_initialized_;
@@ -100,8 +104,8 @@ class UKF {
   int n_sig_;
 
   // NIS values
-  double nis_radar_;
-  double nis_laser_;
+  std::vector<double> nis_radar_;
+  std::vector<double> nis_laser_;
 
 };
 
